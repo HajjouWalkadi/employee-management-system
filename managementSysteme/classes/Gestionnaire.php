@@ -3,7 +3,7 @@ require_once 'Employe.php';
 
     class Gestionnaire extends Employe {
         public $id;
-        public $salaire_base = 3000;
+        public $salaire_base = 8000;
 
         public function salaire($bonus_annuel)
         {
