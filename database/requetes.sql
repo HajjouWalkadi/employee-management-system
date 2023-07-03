@@ -15,7 +15,7 @@
 
 -- 2- Mettez à jour le salaire de base de tous les employés réguliers en augmentant de 10%
 
-        UPDATE employee_regulier SET salaire_base_mensuel = salaire_base_mensuel * 1.1;
+        UPDATE employee_regulier SET heures_travaillees = heures_travaillees * 1.1;
 
 -- 3- Supprimez tous les gestionnaires dont le bonus annuel est inférieur à 5000
     
@@ -23,7 +23,7 @@
 
 -- 4- Sélectionnez le salaire mensuel moyen de tous les cadres supérieurs
 
-        SELECT AVG(salaire_base) AS salaire_mensuel_moyen FROM cadre_superieur;
+        SELECT AVG(salaire_annuel) AS salaire_mensuel_moyen FROM cadre_superieur;
 
 -- 5- Sélectionnez les noms des employés et leurs salaires mensuels triés par ordre décroissant de salaire
 
