@@ -228,14 +228,14 @@ class CadreSuperieur extends Employe
 
 
 // Employé régulier---------------------------
-$employeRegulier = new EmployeRegulier("John Doe", 1, 1, 1);
+$employeRegulier = new EmployeRegulier("Salma", 1, 1, 1);
 echo '<p>' . ("Salaire mensuel de l'employé régulier : \n" . $employeRegulier->calculerSalaireMensuel(-1) . "\n" . '</p>');
 
 echo '<hr>';
 
 // Gestionnaire-------------------------------
 
-$gestionnaire = new Gestionnaire("Jane Smith", 2, -2000, 5000);
+$gestionnaire = new Gestionnaire("Asmaa", 2, -2000, 5000);
 echo '<p>' . "Salaire mensuel du gestionnaire : " . $gestionnaire->calculerSalaireMensuel() . "\n" . '</p>';
 
 $gestionnaire->setSalaireBase(1);
