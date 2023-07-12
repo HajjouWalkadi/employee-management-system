@@ -33,21 +33,21 @@ $employeeId = $conn->lastInsertId();
 $stmt = $conn->prepare("INSERT INTO employee_regulier (id, heures_travaillees) VALUES (:id, :heures_travaillees)");
 $stmt->execute([
     'id' => $employeeId,
-    'heures_travaillees' => $employeRegulier->getSalaire()
+    'heures_travaillees' => $employeRegulier->calculerSalaire()
 ]);
 
 // gestionnaire
 $stmt = $conn->prepare("INSERT INTO gestionnaire (id, salaire_base) VALUES (:id, :salaire_base)");
 $stmt->execute([
     'id' => $employeeId,
-    'salaire_base' => $gestionnaire->getSalaire()
+    'salaire_base' => $gestionnaire->calculerSalaire()
 ]);
 
 // cadre_superieur
 $stmt = $conn->prepare("INSERT INTO cadre_superieur (id, salaire_annuel) VALUES (:id, :salaire_annuel)");
 $stmt->execute([
     'id' => $employeeId,
-    'salaire_annuel' => $cadreSuperieur->getSalaire()
+    'salaire_annuel' => $cadreSuperieur->calculerSalaire()
 ]);
 
 ?>
@@ -63,9 +63,9 @@ $stmt->execute([
 	<title>Employee management system</title>
 </head>
 <body>
-    <p>Le salaire mensuel de l'employé régulier est: <?php echo $employeRegulier->getSalaire(); ?></p>
-	<p>Le salaire mensuel du gestionnaire est: <?php echo $gestionnaire->getSalaire(); ?></p>
-	<p>Le salaire mensuel du cadre supérieur est: <?php echo $cadreSuperieur->getSalaire(); ?></p>
+    <p>Le salaire mensuel de l'employé régulier est: <?php echo $employeRegulier->calculerSalaire(); ?></p>
+	<p>Le salaire mensuel du gestionnaire est: <?php echo $gestionnaire->calculerSalaire(); ?></p>
+	<p>Le salaire mensuel du cadre supérieur est: <?php echo $cadreSuperieur->calculerSalaire(); ?></p>
 
 </body>
 </html>
